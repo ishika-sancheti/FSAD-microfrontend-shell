@@ -14,6 +14,7 @@ export default {
     clean: true,
     publicPath: "auto",
   },
+  "scripts": { "start": "webpack serve", "build": "webpack" },
   module: {
     rules: [
       {
@@ -39,10 +40,19 @@ export default {
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
+    new ModuleFederationPlugin({
+      name: "shell",
+      remotes: {
+        fsad: "fsad@http://localhost:3001/remoteEntry.js",
+        apiProducts: "apiProducts@http://localhost:3002/remoteEntry.js"
+      },
+      shared: { react: { singleton: true }, "react-dom": { singleton: true } }
+    }),
   ],
   devServer: {
     port: 3000,
     open: true,
     hot: true,
+    entry: "./src/index.js"
   },
 };
