@@ -3,11 +3,11 @@ export default function Syllabus() {
     <div>
       <h2>API Products Syllabus</h2>
       <ul>
-        <li>Unit 1: API fundamentals</li>
-        <li>Unit 2: API design</li>
-        <li>Unit 3: REST APIs</li>
-        <li>Unit 4: Databases and persistence</li>
-        <li>Unit 5: Deployment</li>
+        <li>Unit 1: Introduction to APIs</li>
+        <li>Unit 2: REST API design</li>
+        <li>Unit 3: API security and authentication</li>
+        <li>Unit 4: API gateways and management</li>
+        <li>Unit 5: Monetizing and publishing API products</li>
       </ul>
     </div>
   );
